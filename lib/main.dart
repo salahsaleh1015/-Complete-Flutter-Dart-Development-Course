@@ -5,13 +5,14 @@
 
 void main(){
 
- String name = "salah saleh";
+  // Data Types
 
- print("my name is $name");
- print("my name is $name");
- print("my name is $name");
- print("my name is $name");
- print("my name is $name");
+ // 1-  primitive data type
+ // {String , int , double , bool , dynamic}
+
+ // 2- collection data type
+
+
 
 }
 
