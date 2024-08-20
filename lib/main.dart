@@ -4,8 +4,7 @@
 
 
 void main(){
-int age = 24;
-print("My age is $age");
-
+double gpa = 2.7;
+print('my GPA is $gpa');
 }
 
