@@ -5,7 +5,13 @@
 
 void main(){
 
- print("Hello World");
+ String name = "salah saleh";
+
+ print("my name is $name");
+ print("my name is $name");
+ print("my name is $name");
+ print("my name is $name");
+ print("my name is $name");
 
 }
 
