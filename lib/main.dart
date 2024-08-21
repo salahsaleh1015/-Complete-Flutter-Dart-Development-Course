@@ -4,16 +4,11 @@
 
 
 void main(){
-// Dot Operator
+// Lists part one
+List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-String name = "salah";
-print(name.length);
+print(numbers);
 
-int age = 25;
-print(age.isEven);
-
-bool isTrue = true;
-print(isTrue.toString());
 
 
 }
