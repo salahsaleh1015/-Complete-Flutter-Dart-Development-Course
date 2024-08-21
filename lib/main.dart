@@ -4,29 +4,16 @@
 
 
 void main(){
-// Arithmetic Operators
+// Dot Operator
 
+String name = "salah";
+print(name.length);
 
- int num1 = 10;
- int num2 = 5;
+int age = 25;
+print(age.isEven);
 
- int result = num1 + num2;
- print(result);
-
- result = num1 - num2;
- print(result);
-
- result = num1 * num2;
- print(result);
-
- result = num1 ~/ num2;
- print(result);
-
- result = num1 % num2;
- print(result);
-
-
-
+bool isTrue = true;
+print(isTrue.toString());
 
 
 }
