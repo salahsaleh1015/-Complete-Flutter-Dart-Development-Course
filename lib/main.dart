@@ -4,13 +4,15 @@
 
 
 void main(){
-  //bool
+// dynamic
 
-  // are you connected ? true , false
+dynamic name = "hello";
+dynamic number = 10;
+dynamic isCool = true;
 
-  bool isConnected = true;
-
-  print(isConnected);
+print(name);
+print(number);
+print(isCool);
 
 
 
