@@ -4,15 +4,17 @@
 
 
 void main(){
-// Lists part two
-List<String> names = ['John', 'Paul', 'George', 'Ringo'];
+// Sets * store unique values *
 
-print(names[0]);
-print(names[1]);
-print(names[2]);
-print(names[3]);
+Set<String> colors = {"red", "green", "blue", "yellow", "red"};
+print(colors);
 
+colors.add("purple");
+print(colors);
 
+colors.remove("red");
+print(colors);
 
+// ADD & REMOVE ALSO WORK WITH LISTS
 }
 
