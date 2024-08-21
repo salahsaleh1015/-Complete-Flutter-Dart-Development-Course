@@ -4,15 +4,16 @@
 
 
 void main(){
-// dynamic
+// var key word
 
-dynamic name = "hello";
-dynamic number = 10;
-dynamic isCool = true;
+var name = "hello";
+var number = 10;
+var isCool = true;
 
 print(name);
 print(number);
 print(isCool);
+
 
 
 
