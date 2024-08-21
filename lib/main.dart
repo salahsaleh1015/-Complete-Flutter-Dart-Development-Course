@@ -4,10 +4,15 @@
 
 
 void main(){
-num rating = 4;
- print("the movie rating is $rating");
+  //bool
 
-rating = 4.5;
-print("the movie rating is $rating");
+  // are you connected ? true , false
+
+  bool isConnected = true;
+
+  print(isConnected);
+
+
+
 }
 
