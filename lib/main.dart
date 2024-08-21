@@ -4,10 +4,13 @@
 
 
 void main(){
-// Lists part one
-List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// Lists part two
+List<String> names = ['John', 'Paul', 'George', 'Ringo'];
 
-print(numbers);
+print(names[0]);
+print(names[1]);
+print(names[2]);
+print(names[3]);
 
 
 
