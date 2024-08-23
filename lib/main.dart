@@ -1,20 +1,12 @@
+void main() {
+// List<num> ages = [10,15,20,25,30];
+  Map<String, num> ages = {
+    "John": 10,
+    "Jane": 15,
+    "Joe": 20,
+    "Jill": 25,
+    "Jack": 30,
+  };
 
-
-
-
-
-void main(){
-// Sets * store unique values *
-
-Set<String> colors = {"red", "green", "blue", "yellow", "red"};
-print(colors);
-
-colors.add("purple");
-print(colors);
-
-colors.remove("red");
-print(colors);
-
-// ADD & REMOVE ALSO WORK WITH LISTS
+  print(ages["Jack"]);
 }
-
