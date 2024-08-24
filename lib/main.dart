@@ -5,12 +5,13 @@ void main() {
 
    // conditional statement
 
-   bool isWeatherGood = true;
+   int mathScore = 60;
+   bool isPassed = mathScore >= 60;
 
 
-   if(isWeatherGood){
+   if(isPassed) {
 
-     print("GO TO HE SEA");
+     print("CONGRATS YOU PASSED");
 
    }
 
