@@ -1,13 +1,10 @@
 void main() {
   // for loop
 
+ bool isRunning = true;
 
-  List<String> names = ['John', 'Jane', 'Jack', 'Jill'];
-
-  for(int i = 0; i < names.length; i = i+1 ){
-
-    print(names[i]);
+  while(isRunning){
+    // do something
   }
-
 
 }
