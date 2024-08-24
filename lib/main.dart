@@ -1,12 +1,27 @@
+
+
+
 void main() {
-// List<num> ages = [10,15,20,25,30];
-  Map<String, num> ages = {
-    "John": 10,
-    "Jane": 15,
-    "Joe": 20,
-    "Jill": 25,
-    "Jack": 30,
+
+ // List<num> productsPrices = [ 100 , 180 , 400 , 750 ];
+
+  Map<String , num> productsPrices= {
+    "Apple" : 100,
+    "Orange" : 180,
+    "Banana" : 400,
+    "Pineapple" : 750
   };
 
-  print(ages["Jack"]);
+  print(productsPrices["Apple"]);
+
+  productsPrices["watermelon"] = 200;
+
+  print(productsPrices);
+
+
+
+
 }
+  
+  
+  
