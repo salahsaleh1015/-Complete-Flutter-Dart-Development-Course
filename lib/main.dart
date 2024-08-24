@@ -1,10 +1,12 @@
 void main() {
-  // for loop
+  // do while loop
 
  bool isRunning = true;
 
-  while(isRunning){
-    // do something
-  }
+  do{
+
+   // do something
+
+  }while(isRunning);
 
 }
