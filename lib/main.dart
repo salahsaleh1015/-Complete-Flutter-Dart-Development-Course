@@ -1,23 +1,13 @@
 void main() {
-  // switch case
- // work like (==)operator
+  // for loop
 
-  String grade = 'B';
 
-  switch (grade) {
-    case 'A':
-      print("Excellent");
-      break;
-    case 'B':
-      print("Good");
-      break;
-    case 'C':
-      print("Fair");
-      break;
-    case 'D':
-      print("Poor");
-      break;
-    default:
-      print("Invalid");
+  List<String> names = ['John', 'Jane', 'Jack', 'Jill'];
+
+  for(int i = 0; i < names.length; i = i+1 ){
+
+    print(names[i]);
   }
+
+
 }
