@@ -1,14 +1,23 @@
 void main() {
-  // nested if
+  // switch case
+ // work like (==)operator
 
-  bool isAdmin = false;
-  bool isModerator = false;
+  String grade = 'B';
 
-  if (isAdmin) {
-    print("You have admin privileges");
-  } else if (isModerator) {
-    print("You have moderator privileges");
-  } else {
-    print("You have no privileges");
+  switch (grade) {
+    case 'A':
+      print("Excellent");
+      break;
+    case 'B':
+      print("Good");
+      break;
+    case 'C':
+      print("Fair");
+      break;
+    case 'D':
+      print("Poor");
+      break;
+    default:
+      print("Invalid");
   }
 }
