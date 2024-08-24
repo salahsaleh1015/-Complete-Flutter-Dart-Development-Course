@@ -3,21 +3,23 @@
 
 void main() {
 
- // List<num> productsPrices = [ 100 , 180 , 400 , 750 ];
+   // comparison operators
 
-  Map<String , num> productsPrices= {
-    "Apple" : 100,
-    "Orange" : 180,
-    "Banana" : 400,
-    "Pineapple" : 750
-  };
+   int arabicScore = 30;
+   int englishScore = 40;
 
-  print(productsPrices["Apple"]);
-
-  productsPrices["watermelon"] = 200;
-
-  print(productsPrices);
-
+   bool isArabicScoreSmaller = arabicScore < englishScore;
+   print(isArabicScoreSmaller);
+   bool isArabicScoreBigger = arabicScore > englishScore;
+   print(isArabicScoreBigger);
+   bool isArabicScoreEqual = arabicScore == englishScore;
+   print(isArabicScoreEqual);
+   bool isArabicScoreNotEqual = arabicScore != englishScore;
+   print(isArabicScoreNotEqual);
+   bool isArabicScoreSmallerOrEqual = arabicScore <= englishScore;
+   print(isArabicScoreSmallerOrEqual);
+   bool isArabicScoreBiggerOrEqual = arabicScore >= englishScore;
+   print(isArabicScoreBiggerOrEqual);
 
 
 
