@@ -1,11 +1,14 @@
 void main() {
-  // if Else
+  // nested if
 
-  bool isWeatherGood = false;
+  bool isAdmin = false;
+  bool isModerator = false;
 
-  if (isWeatherGood) {
-    print("Go to the Sea");
+  if (isAdmin) {
+    print("You have admin privileges");
+  } else if (isModerator) {
+    print("You have moderator privileges");
   } else {
-    print("Go to the cinema");
+    print("You have no privileges");
   }
 }
