@@ -1,12 +1,13 @@
 void main() {
-  // do while loop
+  // for in loop
 
- bool isRunning = true;
+ List<String> names = ['John', 'Jane', 'Jill'];
 
-  do{
+   for(var item in names){
 
-   // do something
+    print(item);
 
-  }while(isRunning);
+   }
+
 
 }
