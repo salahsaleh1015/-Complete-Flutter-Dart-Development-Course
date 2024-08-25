@@ -1,13 +1,12 @@
 void main() {
-  // for in loop
+  // for each loop
 
  List<String> names = ['John', 'Jane', 'Jill'];
 
-   for(var item in names){
+names.forEach((element){
 
-    print(item);
-
-   }
+ print(element);
+});
 
 
 }
