@@ -1,12 +1,18 @@
 void main() {
-  // for each loop
-
- List<String> names = ['John', 'Jane', 'Jill'];
-
-names.forEach((element){
-
- print(element);
-});
+  // basic function
 
 
+  myStory();
+  print('after story');
+  myStory();
+}
+
+
+void myStory(){
+ print("hello");
+ print("hello");
+ print("hello");
+ print("hello");
+ print("hello");
+ print("hello");
 }
