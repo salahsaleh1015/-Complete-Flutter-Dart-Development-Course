@@ -1,19 +1,13 @@
 void main() {
-  // return statement
+  //  optional parameters
 
-  int sum = sumTwoNumbers(10,20);
-  print(sum);
+  print(calculateFinalPrice(200, 10));
 
-   sum = sumTwoNumbers(50,20);
-  print(sum);
-
-
-   sum = sumTwoNumbers(60,90);
-   print(sum);
+  print(calculateFinalPrice(150));
 }
 
-int sumTwoNumbers(int number1 , int number2) {
+double calculateFinalPrice(double price, [double discount = 0]) {
+  double finalPrice = price - (price * discount / 100);
 
-  int result = number1 + number2;
-  return result;
+  return finalPrice;
 }
