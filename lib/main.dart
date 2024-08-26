@@ -1,16 +1,19 @@
 void main() {
   // return statement
 
-  int sum = sumTwoNumbers();
+  int sum = sumTwoNumbers(10,20);
+  print(sum);
 
-  int f = sum + 15;
+   sum = sumTwoNumbers(50,20);
+  print(sum);
 
-  print(f);
+
+   sum = sumTwoNumbers(60,90);
+   print(sum);
 }
 
-int sumTwoNumbers() {
-  int a = 10;
-  int b = 20;
-  int c = a + b;
-  return c;
+int sumTwoNumbers(int number1 , int number2) {
+
+  int result = number1 + number2;
+  return result;
 }
