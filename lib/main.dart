@@ -1,18 +1,16 @@
 void main() {
-  // basic function
+  // return statement
 
+  int sum = sumTwoNumbers();
 
-  myStory();
-  print('after story');
-  myStory();
+  int f = sum + 15;
+
+  print(f);
 }
 
-
-void myStory(){
- print("hello");
- print("hello");
- print("hello");
- print("hello");
- print("hello");
- print("hello");
+int sumTwoNumbers() {
+  int a = 10;
+  int b = 20;
+  int c = a + b;
+  return c;
 }
