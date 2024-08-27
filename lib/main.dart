@@ -1,13 +1,14 @@
-void main() {
-  //  named parameters
 
-  print(calculateFinalPrice(price: 150, discount: 10));
+void main() {}
 
-  print(calculateFinalPrice(price: 150));
-}
+//فصيله=> Human
 
-double calculateFinalPrice({required double price, double discount = 0}) {
-  double finalPrice = price - (price * discount / 100);
+// صفات و خصائص =>  skin color , height , weight , age
 
-  return finalPrice;
+class Human{
+  String? skinColor;
+  int? height;
+  int? weight;
+  int? age;
+
 }
