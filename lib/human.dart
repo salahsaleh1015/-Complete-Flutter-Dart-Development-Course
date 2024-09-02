@@ -1,14 +1,12 @@
-
-
 // class contain ( attributes + methods )
 class Human {
   // constructor
-  Human(
-      {required String skinColor,
-        required int height,
-        required int weight,
-        required int age,
-      }) {
+  Human({
+    required String skinColor,
+    required int height,
+    required int weight,
+    required int age,
+  }) {
     this.skinColor = skinColor;
     this.height = height;
     this.weight = weight;
@@ -24,17 +22,16 @@ class Human {
 
   // methods
 
-  void eat() {
-    print("human is eating");
+  setNumOfArms(int numOfArms) {
+    if (numOfArms >= 0 && numOfArms <= 2) {
+      _numOfArms = numOfArms;
+    }
   }
 
-  void sleep() {
-    print("human is sleeping");
-  }
 
-  void code() {
-    print("human is coding");
-  }
+ int getNumOfArms() {
+    return _numOfArms;
+ }
 }
 
 ///Note : method is A function that initialized in a class
