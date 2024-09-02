@@ -2,10 +2,10 @@
 class Human {
   // constructor
   Human({
-    required this.skinColor,
-    required this.height,
-    required this.weight,
-    required this.age,
+     this.skinColor,
+     this.height,
+     this.weight,
+     this.age,
 
   });
 
