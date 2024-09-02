@@ -15,6 +15,10 @@ void main() {
 
 // class contain ( attributes + methods )
 class Human {
+  // constructor
+  Human(){}
+
+
   // attributes
   String? skinColor;
   int? height;
