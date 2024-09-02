@@ -1,6 +1,4 @@
-
 void main() {
-
   Human salah = Human();
 
   salah.age = 34;
@@ -10,16 +8,33 @@ void main() {
 
   print(salah.numOfArms);
 
+  salah.eat();
+  salah.sleep();
+  salah.code();
 }
 
-
-
-class Human{
-
+// class contain ( attributes + methods )
+class Human {
+  // attributes
   String? skinColor;
   int? height;
   int? weight;
   int? age;
   int numOfArms = 2;
 
+  // methods
+
+  void eat() {
+    print("human is eating");
+  }
+
+  void sleep() {
+    print("human is sleeping");
+  }
+
+  void code() {
+    print("human is coding");
+  }
 }
+
+///Note : method is A function that initialized in a class
