@@ -22,7 +22,7 @@ class Human {
 
   // methods
 
-  setNumOfArms(int numOfArms) {
+ set numOfArms(int numOfArms) {
     if (numOfArms >= 0 && numOfArms <= 2) {
       _numOfArms = numOfArms;
     }
