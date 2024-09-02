@@ -29,7 +29,7 @@ class Human {
   }
 
 
- int getNumOfArms() => _numOfArms;
+ int get getNumOfArms => _numOfArms;
 }
 
 ///Note : method is A function that initialized in a class
