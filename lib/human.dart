@@ -2,16 +2,12 @@
 class Human {
   // constructor
   Human({
-    required String skinColor,
-    required int height,
-    required int weight,
-    required int age,
-  }) {
-    this.skinColor = skinColor;
-    this.height = height;
-    this.weight = weight;
-    this.age = age;
-  }
+    required this.skinColor,
+    required this.height,
+    required this.weight,
+    required this.age,
+
+  });
 
   // attributes
   String? skinColor;
