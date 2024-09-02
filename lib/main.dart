@@ -1,23 +1,28 @@
 void main() {
-  Human salah = Human();
+  Human salah = Human(
+    age: 33,
+    height: 180,
+    skinColor: "black",
+    weight: 95,
+  );
 
-  salah.age = 34;
-  salah.height = 5;
-  salah.weight = 60;
-  salah.skinColor = "white";
-
-  print(salah.numOfArms);
-
-  salah.eat();
-  salah.sleep();
-  salah.code();
+  print(salah.age);
 }
 
 // class contain ( attributes + methods )
 class Human {
   // constructor
-  Human(){}
-
+  Human(
+      {required String skinColor,
+      required int height,
+      required int weight,
+      required int age,
+     }) {
+    this.skinColor = skinColor;
+    this.height = height;
+    this.weight = weight;
+    this.age = age;
+  }
 
   // attributes
   String? skinColor;
