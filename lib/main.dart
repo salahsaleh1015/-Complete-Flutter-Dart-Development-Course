@@ -8,16 +8,18 @@ void main() {
   salah.weight = 60;
   salah.skinColor = "white";
 
-  print(salah.age);
+  print(salah.numOfArms);
 
 }
 
 
 
 class Human{
+
   String? skinColor;
   int? height;
   int? weight;
   int? age;
+  int numOfArms = 2;
 
 }
