@@ -1,23 +1,12 @@
 import 'package:complete_flutter_dart_development_course/human.dart';
 
-void main() {
-  Lion lion = Lion();
-  Dog dog = Dog();
-  Cat cat = Cat();
-
-
-
-  cat.meow();
-  cat.move();
-  dog.bark();
-  dog.eat();
-  lion.roar();
-  lion.sleep();
-
-
-}
+void main() {}
 
 class Animal {
+  Animal(this.weight, this.skinColor);
+
+  double weight;
+  String skinColor;
   int numOfLimps = 4;
   void eat() {
     print('eat');
@@ -32,19 +21,26 @@ class Animal {
   }
 }
 
-class Lion extends Animal{
+class Lion extends Animal {
+  Lion(this.name, super.weight, super.skinColor);
+
+  String name;
   void roar() {
     print('roar');
   }
 }
 
-class Dog extends Animal{
+class Dog extends Animal {
+  Dog(super.weight, super.skinColor);
+
   void bark() {
     print('bark');
   }
 }
 
-class Cat extends Animal{
+class Cat extends Animal {
+  Cat(super.weight, super.skinColor);
+
   void meow() {
     print('meow');
   }
