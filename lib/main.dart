@@ -1,6 +1,12 @@
 import 'package:complete_flutter_dart_development_course/human.dart';
 
-void main() {}
+void main() {
+
+  Lion lion = Lion('Simba', 300, 'gray');
+ Cat cat = Cat(10, 'black');
+  lion.eat();
+  cat.eat();
+}
 
 class Animal {
   Animal(this.weight, this.skinColor);
@@ -23,10 +29,14 @@ class Animal {
 
 class Lion extends Animal {
   Lion(this.name, super.weight, super.skinColor);
-
   String name;
   void roar() {
     print('roar');
+  }
+
+  @override
+  void eat() {
+    print('lion is eating');
   }
 }
 
