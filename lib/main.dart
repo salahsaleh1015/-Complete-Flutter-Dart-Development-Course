@@ -1,13 +1,13 @@
 import 'package:complete_flutter_dart_development_course/human.dart';
 
 void main() {
+  Lion lion = Lion();
+  Cat cat = Cat();
+  Dog dog = Dog();
+  // zoo animals
 
-  Lion lion = Lion('Simba', 300, 'gray');
- Cat cat = Cat(10, 'black');
-  lion.eat();
-  cat.eat();
+  List<Animal> zooAnimals = [lion, cat, dog];
 }
-
 class Animal {
   Animal(this.weight, this.skinColor);
 
