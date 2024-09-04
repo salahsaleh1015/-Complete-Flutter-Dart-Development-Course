@@ -1,39 +1,15 @@
-import 'package:complete_flutter_dart_development_course/human.dart';
 
 void main() {
-  // draw circle
-
+  List<Animal> animals = [Dog(leg: 4), Cat(), Snake()];
 }
 
+class Animal {}
 
-class Animal {
-  String name = "Animal";
-  String color = "Black";
-  int age = 5;
-
-  void eat() {
-    print("Animal is eating");
-  }
-
+class Dog extends Animal {
+  Dog({required this.leg});
+  int leg;
 }
 
-mixin MammalsMixin {
+class Cat extends Animal {}
 
-  void walk() {}
-}
-
-mixin ReptilesMixin {
-
-  void crawl() {}
-}
-
-mixin PetMixin {
-
-  void play() {}
-}
-
-class Dog extends Animal with MammalsMixin, PetMixin {}
-
-class Cat extends Animal with MammalsMixin, PetMixin {}
-
-class Snake extends Animal with ReptilesMixin {}
+class Snake extends Animal {}
