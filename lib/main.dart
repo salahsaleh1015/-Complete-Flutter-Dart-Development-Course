@@ -8,15 +8,11 @@ void main() {
 
   List<Animal> zooAnimals = [lion, cat, dog];
 }
-class Animal {
-  Animal(this.weight, this.skinColor);
+ abstract class Animal {
 
-  double weight;
-  String skinColor;
   int numOfLimps = 4;
-  void eat() {
-    print('eat');
-  }
+
+   void eat();
 
   void sleep() {
     print('sleep');
@@ -28,8 +24,8 @@ class Animal {
 }
 
 class Lion extends Animal {
-  Lion(this.name, super.weight, super.skinColor);
-  String name;
+
+
   void roar() {
     print('roar');
   }
@@ -41,17 +37,26 @@ class Lion extends Animal {
 }
 
 class Dog extends Animal {
-  Dog(super.weight, super.skinColor);
+
 
   void bark() {
     print('bark');
   }
+
+  @override
+  void eat() {
+    // TODO: implement eat
+  }
 }
 
 class Cat extends Animal {
-  Cat(super.weight, super.skinColor);
 
   void meow() {
     print('meow');
+  }
+
+  @override
+  void eat() {
+    // TODO: implement eat
   }
 }
