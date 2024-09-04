@@ -1,75 +1,28 @@
 import 'package:complete_flutter_dart_development_course/human.dart';
 
 void main() {
-  Lion lion = Lion();
-  Cat cat = Cat();
-  Dog dog = Dog();
-  // zoo animals
+  // draw circle
 
-  List<Animal> zooAnimals = [lion, cat, dog];
-}
- abstract class Animal {
+  Circle circle = Circle(x: 10, y: 20, radius: 30);
+  Circle originCircle = Circle.origin(radius: 30);
 
-  int numOfLimps = 4;
-
-   void eat();
-
-  void sleep() {
-    print('sleep');
-  }
-
-  void move() {
-    print('move');
-  }
+  circle.draw();
+  originCircle.draw();
 }
 
-// class Lion extends Animal {
-//
-//
-//   void roar() {
-//     print('roar');
-//   }
-//
-//   @override
-//   void eat() {
-//     print('lion is eating');
-//   }
-// }
+class Circle {
+  late int x;
+  late int y;
+  late int radius;
 
-class Dog implements Animal {
+  Circle({required this.x, required this.y, required this.radius});
 
-
-  void bark() {
-    print('bark');
+  draw() {
+    print("drawing a circle at $x, $y with radius $radius");
   }
 
-  @override
-  void eat() {
-    // TODO: implement eat
-  }
-
-  @override
-  int numOfLimps = 4;
-
-  @override
-  void move() {
-    // TODO: implement move
-  }
-
-  @override
-  void sleep() {
-    // TODO: implement sleep
+  Circle.origin({required this.radius}) {
+    x = 0;
+    y = 0;
   }
 }
-
-// class Cat extends Animal {
-//
-//   void meow() {
-//     print('meow');
-//   }
-//
-//   @override
-//   void eat() {
-//     // TODO: implement eat
-//   }
-// }
