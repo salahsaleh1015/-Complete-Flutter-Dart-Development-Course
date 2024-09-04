@@ -27,8 +27,13 @@ mixin ReptilesMixin {
   void crawl() {}
 }
 
-class Dog extends Animal with MammalsMixin {}
+mixin PetMixin {
 
-class Cat extends Animal with MammalsMixin {}
+  void play() {}
+}
+
+class Dog extends Animal with MammalsMixin, PetMixin {}
+
+class Cat extends Animal with MammalsMixin, PetMixin {}
 
 class Snake extends Animal with ReptilesMixin {}
