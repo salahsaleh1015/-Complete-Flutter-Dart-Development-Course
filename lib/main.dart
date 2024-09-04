@@ -1,15 +1,14 @@
-
 void main() {
-  List<Animal> animals = [Dog(leg: 4), Cat(), Snake()];
+  Gender gender = Gender.male;
+
+  switch (gender) {
+    case Gender.male:
+      print("male");
+      break;
+    case Gender.female:
+      print("female");
+      break;
+  }
 }
 
-class Animal {}
-
-class Dog extends Animal {
-  Dog({required this.leg});
-  int leg;
-}
-
-class Cat extends Animal {}
-
-class Snake extends Animal {}
+enum Gender { male, female }
