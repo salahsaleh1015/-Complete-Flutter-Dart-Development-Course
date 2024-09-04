@@ -23,20 +23,20 @@ void main() {
   }
 }
 
-class Lion extends Animal {
+// class Lion extends Animal {
+//
+//
+//   void roar() {
+//     print('roar');
+//   }
+//
+//   @override
+//   void eat() {
+//     print('lion is eating');
+//   }
+// }
 
-
-  void roar() {
-    print('roar');
-  }
-
-  @override
-  void eat() {
-    print('lion is eating');
-  }
-}
-
-class Dog extends Animal {
+class Dog implements Animal {
 
 
   void bark() {
@@ -47,16 +47,29 @@ class Dog extends Animal {
   void eat() {
     // TODO: implement eat
   }
-}
 
-class Cat extends Animal {
+  @override
+  int numOfLimps = 4;
 
-  void meow() {
-    print('meow');
+  @override
+  void move() {
+    // TODO: implement move
   }
 
   @override
-  void eat() {
-    // TODO: implement eat
+  void sleep() {
+    // TODO: implement sleep
   }
 }
+
+// class Cat extends Animal {
+//
+//   void meow() {
+//     print('meow');
+//   }
+//
+//   @override
+//   void eat() {
+//     // TODO: implement eat
+//   }
+// }
