@@ -12,14 +12,14 @@ class HelloWorldApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       home: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-        ),
-        appBar: AppBar(
-          title: const Text("My First App"),
-        ),
-        body: const Center(
-          child: Text("Hello World"),
+
+
+        body:  Center(
+          child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.blue,
+              child: Center(child: Text("Hello World"))),
         ),
       ),
     );
