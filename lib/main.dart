@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+  runApp(const HelloWorldApp());
+}
+
+
+class HelloWorldApp extends StatelessWidget {
+  const HelloWorldApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  MaterialApp(
+      home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+        ),
+        appBar: AppBar(
+          title: const Text("My First App"),
+        ),
+        body: const Center(
+          child: Text("Hello World"),
+        ),
       ),
-      appBar: AppBar(
-        title: Text("My First App"),
-      ),
-      body: Center(
-        child: Text("Hello World"),
-      ),
-    ),
-  ));
+    );
+  }
 }
