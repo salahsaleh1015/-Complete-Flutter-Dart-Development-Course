@@ -1,47 +1,18 @@
+import 'package:complete_flutter_dart_development_course/birthday_card_app/birthday_card_app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const HelloWorldApp());
+  runApp(const MyApp());
 }
 
-class HelloWorldApp extends StatelessWidget {
-  const HelloWorldApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          body: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.blue,
-            child: const Center(
-              child: Text("Hello World"),
-            ),
-          ),
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.red,
-            child: const Center(
-              child: Text("Hello World"),
-            ),
-          ),
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.yellow,
-            child: const Center(
-              child: Text("Hello World"),
-            ),
-          ),
-        ],
-      )),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: BirthdayCardApp(),
     );
   }
 }
