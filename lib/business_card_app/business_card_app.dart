@@ -12,13 +12,19 @@ class BusinessCardApp extends StatelessWidget {
         child: Column(
          children: [
            CircleAvatar(
-            radius: 125,
+            radius: 105,
             backgroundColor: Colors.white,
              child:CircleAvatar(
-               radius: 120,
+               radius: 100,
                backgroundImage: AssetImage("images/business_image.jpeg"),
              ) ,
-           )
+           ),
+           Text("Salah Saleh", style: TextStyle(
+             color: Colors.white,
+             fontSize: 30,
+             fontFamily: "Pacifico",
+             fontWeight: FontWeight.bold
+           ))
          ],
         ),
       ),
