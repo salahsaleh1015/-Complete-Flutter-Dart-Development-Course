@@ -37,12 +37,7 @@ class BusinessCardApp extends StatelessWidget {
             thickness: 2,
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              left: 16,
-              right: 16,
-              top: 8,
-              bottom: 8,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -71,12 +66,7 @@ class BusinessCardApp extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              left: 16,
-              right: 16,
-              top: 8,
-              bottom: 8,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
