@@ -36,60 +36,48 @@ class BusinessCardApp extends StatelessWidget {
             endIndent: 50,
             thickness: 2,
           ),
-          Container(
+
+          Card(
             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            decoration: BoxDecoration(
-              color: Colors.white,
+            shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
-            height: 65,
-            child: const Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Icon(
-                    Icons.phone,
-                    color: Color(0xFF314f6a),
-                    size: 32,
-                  ),
+            child: const ListTile(
+              leading: Padding(
+                padding: EdgeInsets.only(left: 20),
+                child: Icon(
+                  Icons.phone,
+                  color: Color(0xFF314f6a),
+                  size: 32,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 15),
-                  child: Text(
-                    "(+20) 1127504745",
-                    style: TextStyle(fontSize: 24),
-                  ),
-                ),
-              ],
+              ),
+              title: Text(
+                "(+20) 1127504745",
+                style: TextStyle(fontSize: 24),
+              ),
             ),
           ),
-          Container(
+          Card(
             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            decoration: BoxDecoration(
-              color: Colors.white,
+            shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
-            height: 65,
-            child: const Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Icon(
-                    Icons.mail,
-                    color: Color(0xFF314f6a),
-                    size: 32,
-                  ),
+            child: const ListTile(
+              leading: Padding(
+                padding: EdgeInsets.only(left: 20),
+                child: Icon(
+                  Icons.mail,
+                  color: Color(0xFF314f6a),
+                  size: 32,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 15),
-                  child: Text(
-                    "salahsaleh1015@gmail.com",
-                    style: TextStyle(fontSize: 24),
-                  ),
-                ),
-              ],
+              ),
+              title:  Text(
+                "salahsaleh@gmail.com",
+                style: TextStyle(fontSize: 24),
+              ),
             ),
-          )
+          ),
+
         ],
       ),
     );
