@@ -8,6 +8,7 @@ class BusinessCardApp extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF314f6a),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const CircleAvatar(
             radius: 105,
@@ -28,6 +29,13 @@ class BusinessCardApp extends StatelessWidget {
                   color: Colors.grey,
                   fontSize: 25,
                   fontWeight: FontWeight.normal)),
+          const Divider(
+            color: Colors.grey,
+            height: 10,
+            indent: 50,
+            endIndent: 50,
+            thickness: 2,
+          ),
           Padding(
             padding: const EdgeInsets.only(
               left: 16,
@@ -40,28 +48,24 @@ class BusinessCardApp extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8),
               ),
-
               height: 65,
               child: const Row(
                 children: [
-
                   Padding(
                     padding: EdgeInsets.only(left: 20),
                     child: Icon(
-                                    Icons.phone,
+                      Icons.phone,
                       color: Color(0xFF314f6a),
                       size: 32,
                     ),
                   ),
-                  Spacer(
-                    flex: 1,
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Text(
+                      "(+20) 1127504745",
+                      style: TextStyle(fontSize: 24),
+                    ),
                   ),
-                  Text("(+20) 1127504745",style: TextStyle(
-                    fontSize: 24
-                  ),),
-                  Spacer(
-                    flex: 2,
-                  )
                 ],
               ),
             ),
@@ -78,11 +82,9 @@ class BusinessCardApp extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8),
               ),
-
               height: 65,
               child: const Row(
                 children: [
-
                   Padding(
                     padding: EdgeInsets.only(left: 20),
                     child: Icon(
@@ -91,15 +93,13 @@ class BusinessCardApp extends StatelessWidget {
                       size: 32,
                     ),
                   ),
-                  Spacer(
-                    flex: 1,
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Text(
+                      "salahsaleh1015@gmail.com",
+                      style: TextStyle(fontSize: 24),
+                    ),
                   ),
-                  Text("salahsaleh1015@gmail.com",style: TextStyle(
-                      fontSize: 24
-                  ),),
-                  Spacer(
-                    flex: 2,
-                  )
                 ],
               ),
             ),
