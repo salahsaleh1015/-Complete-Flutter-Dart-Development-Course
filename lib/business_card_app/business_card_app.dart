@@ -9,8 +9,8 @@ class BusinessCardApp extends StatelessWidget {
       backgroundColor: const Color(0xFF314f6a),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const CircleAvatar(
+        children:[
+           const CircleAvatar(
             radius: 105,
             backgroundColor: Colors.white,
             child: CircleAvatar(
@@ -18,18 +18,18 @@ class BusinessCardApp extends StatelessWidget {
               backgroundImage: AssetImage("images/business_image.jpeg"),
             ),
           ),
-          const Text("Salah Saleh",
+           const Text("Salah Saleh",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontFamily: "Pacifico",
                   fontWeight: FontWeight.bold)),
-          const Text("Flutter Developer",
+           const Text("Flutter Developer",
               style: TextStyle(
                   color: Colors.grey,
                   fontSize: 25,
                   fontWeight: FontWeight.normal)),
-          const Divider(
+           const Divider(
             color: Colors.grey,
             height: 10,
             indent: 50,
@@ -38,7 +38,7 @@ class BusinessCardApp extends StatelessWidget {
           ),
 
           Card(
-            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            margin:  const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             ),
