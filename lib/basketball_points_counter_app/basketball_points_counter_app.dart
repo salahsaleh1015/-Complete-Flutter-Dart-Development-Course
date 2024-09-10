@@ -17,6 +17,20 @@ class BasketballPointsCounterApp extends StatelessWidget {
         ),
       ),
 
+
+      body: Column(
+        children: [
+          Text("Team A",style: TextStyle(
+            fontSize: 40,
+
+          ),),
+          Text("0",style: TextStyle(
+            fontSize: 150,
+
+          ),),
+        ],
+      ),
+
     );
   }
 }
