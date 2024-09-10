@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class BasketballPointsCounterApp extends StatelessWidget {
-  const BasketballPointsCounterApp({super.key});
 
+   int teamAPoints = 0;
+   int teamBPoints = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,9 +36,9 @@ class BasketballPointsCounterApp extends StatelessWidget {
                         fontSize: 40,
                       ),
                     ),
-                    const Text(
-                      "0",
-                      style: TextStyle(
+                     Text(
+                      "$teamAPoints",
+                      style: const TextStyle(
                         fontSize: 150,
                       ),
                     ),
@@ -104,9 +105,9 @@ class BasketballPointsCounterApp extends StatelessWidget {
                         fontSize: 40,
                       ),
                     ),
-                    const Text(
-                      "0",
-                      style: TextStyle(
+                     Text(
+                      "$teamBPoints",
+                      style: const TextStyle(
                         fontSize: 150,
                       ),
                     ),
