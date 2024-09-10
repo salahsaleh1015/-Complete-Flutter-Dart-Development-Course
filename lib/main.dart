@@ -1,3 +1,4 @@
+import 'package:complete_flutter_dart_development_course/basketball_points_counter_app/basketball_points_counter_app.dart';
 import 'package:complete_flutter_dart_development_course/birthday_card_app/birthday_card_app.dart';
 import 'package:complete_flutter_dart_development_course/business_card_app/business_card_app.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
 
       debugShowCheckedModeBanner: false,
-      home: BusinessCardApp(),
+      home: BasketballPointsCounterApp(),
     );
   }
 }
