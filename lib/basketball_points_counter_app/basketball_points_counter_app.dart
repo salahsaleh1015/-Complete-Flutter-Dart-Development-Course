@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
-class BasketballPointsCounterApp extends StatelessWidget {
+class BasketballPointsCounterApp extends StatefulWidget {
 
+  @override
+  State<BasketballPointsCounterApp> createState() => _BasketballPointsCounterAppState();
+}
+
+class _BasketballPointsCounterAppState extends State<BasketballPointsCounterApp> {
    int teamAPoints = 0;
+
    int teamBPoints = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +57,11 @@ class BasketballPointsCounterApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            teamAPoints++;
+                          });
+                        },
                         child: const Text(
                           "Add 1 Point",
                           style: TextStyle(color: Colors.black, fontSize: 24),
@@ -64,7 +75,11 @@ class BasketballPointsCounterApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            teamAPoints += 2;
+                          });
+                        },
                         child: const Text(
                           "Add 2 Point",
                           style: TextStyle(color: Colors.black, fontSize: 24),
@@ -78,7 +93,11 @@ class BasketballPointsCounterApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            teamAPoints += 3;
+                          });
+                        },
                         child: const Text(
                           "Add 3 Point",
                           style: TextStyle(color: Colors.black, fontSize: 24),
@@ -119,7 +138,11 @@ class BasketballPointsCounterApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            teamBPoints++;
+                          });
+                        },
                         child: const Text(
                           "Add 1 Point",
                           style: TextStyle(color: Colors.black, fontSize: 24),
@@ -133,7 +156,9 @@ class BasketballPointsCounterApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          teamBPoints += 2;
+                        },
                         child: const Text(
                           "Add 2 Point",
                           style: TextStyle(color: Colors.black, fontSize: 24),
@@ -147,7 +172,12 @@ class BasketballPointsCounterApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            teamBPoints += 3;
+                          });
+
+                        },
                         child: const Text(
                           "Add 3 Point",
                           style: TextStyle(color: Colors.black, fontSize: 24),
@@ -169,7 +199,12 @@ class BasketballPointsCounterApp extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5.0),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  teamAPoints = 0;
+                  teamBPoints = 0;
+                });
+              },
               child: const Text(
                 "Reset",
                 style: TextStyle(color: Colors.black, fontSize: 24),
