@@ -1,4 +1,5 @@
 import 'package:complete_flutter_dart_development_course/toku_app/components/category_item.dart';
+import 'package:complete_flutter_dart_development_course/toku_app/screens/numbers_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,7 +26,7 @@ class HomePage extends StatelessWidget {
             color: const Color(0xffff9f3b),
             title: "Numbers",
             onTap: (){
-              print("swwwww");
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const NumbersPage()));
             },
           ),
           Category(
