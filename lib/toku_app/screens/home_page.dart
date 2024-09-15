@@ -18,23 +18,30 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: const  Column(
+      body:   Column(
         children: [
           Category(
-            color: Color(0xffff9f3b),
+
+            color: const Color(0xffff9f3b),
             title: "Numbers",
+            onTap: (){
+              print("swwwww");
+            },
           ),
           Category(
-            color: Color(0xff5d8b3e),
+            color: const Color(0xff5d8b3e),
             title: "Famely Members",
+            onTap: (){},
           ),
           Category(
-            color: Color(0xff854cae),
+            color: const Color(0xff854cae),
             title: "Colors",
+            onTap: (){},
           ),
           Category(
-            color: Color(0xff51b0d5),
+            color: const Color(0xff51b0d5),
             title: "Phrases",
+            onTap: (){},
           ),
         ],
       ),
