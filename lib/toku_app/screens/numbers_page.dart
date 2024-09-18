@@ -5,12 +5,6 @@ import 'package:flutter/material.dart';
 class NumbersPage extends StatelessWidget {
   const NumbersPage({super.key});
 
-  final Number one = const Number(
-    image: 'assets/images/numbers/number_one.png',
-    enName: "one",
-    jpName: "ichi",
-  );
-
   final List<Number> numbers = const [
     Number(
       image: 'assets/images/numbers/number_one.png',
@@ -75,21 +69,11 @@ class NumbersPage extends StatelessWidget {
             ),
           ),
         ),
-        body: ListView(
-          children: [
-            NumberItem(number: numbers[0]),
-            NumberItem(number: numbers[1]),
-            NumberItem(number: numbers[2]),
-            NumberItem(number: numbers[3]),
-            NumberItem(number: numbers[4]),
-            NumberItem(number: numbers[5]),
-            NumberItem(number: numbers[6]),
-            NumberItem(number: numbers[7]),
-            NumberItem(number: numbers[8]),
-            NumberItem(number: numbers[9]),
-            NumberItem(number: numbers[10]),
-
-          ],
+        body: ListView.builder(
+          itemCount: numbers.length,
+          itemBuilder: (context, index) {
+            return NumberItem(number: numbers[index]);
+          },
         ));
   }
 }
