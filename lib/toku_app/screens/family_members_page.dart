@@ -1,5 +1,5 @@
 import 'package:complete_flutter_dart_development_course/toku_app/components/item.dart';
-import 'package:complete_flutter_dart_development_course/toku_app/models/number_model.dart';
+import 'package:complete_flutter_dart_development_course/toku_app/models/item_model.dart';
 import 'package:flutter/material.dart';
 
 class FamilyMembersPage extends StatelessWidget {
