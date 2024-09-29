@@ -1,6 +1,6 @@
-
+import 'package:complete_flutter_dart_development_course/news_app/widgets/categories_list.dart';
+import 'package:complete_flutter_dart_development_course/news_app/widgets/sliver_news_list.dart';
 import 'package:flutter/material.dart';
-
 
 class NewsHomeView extends StatelessWidget {
   const NewsHomeView({super.key});
@@ -15,10 +15,47 @@ class NewsHomeView extends StatelessWidget {
         title: const Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text("News ",style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),),
-            Text("Cloud",style: TextStyle(color: Colors.orange,fontSize: 25,fontWeight: FontWeight.bold),),
+            Text(
+              "News ",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
+            ),
+            Text(
+              "Cloud",
+              style: TextStyle(
+                  color: Colors.orange,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
+            ),
           ],
         ),
+      ),
+      body: const Padding(
+        padding: EdgeInsets.all(8.0),
+
+        child: CustomScrollView(
+          physics: BouncingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(child: CategoriesList()),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 30,
+              ),
+            ),
+            SliverNewsList(),
+          ],
+        ),
+        // child: Column(
+        //   children: [
+        //     CategoriesList(),
+        //     SizedBox(
+        //       height: 30,
+        //     ),
+        //     NewsList(),
+        //   ],
+        // ),
       ),
     );
   }
