@@ -7,5 +7,14 @@ class NewsService {
   getGeneralNews() async {
     Response response = await dio.get(
         'https://newsapi.org/v2/top-headlines?category=general&apiKey=6172931f0d354e2ab0704a5fa16a19a9');
+
+    Map<String, dynamic> jsonData = response.data;
+
+    List<dynamic> articles = jsonData['articles'];
+
+    for (var article in articles) {
+      print(article['title']);
+    }
+
   }
 }
