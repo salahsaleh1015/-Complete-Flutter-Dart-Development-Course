@@ -2,6 +2,7 @@ import 'package:complete_flutter_dart_development_course/news_app/models/article
 import 'package:dio/dio.dart';
 
 class NewsService {
+
   final Dio dio;
   NewsService({required this.dio});
 
