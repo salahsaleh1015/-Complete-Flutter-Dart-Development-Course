@@ -1,5 +1,5 @@
-import 'package:complete_flutter_dart_development_course/news_app/widgets/categories_list.dart';
-import 'package:complete_flutter_dart_development_course/news_app/widgets/sliver_news_list.dart';
+import 'package:complete_flutter_dart_development_course/news_app/widgets/lists/categories_list.dart';
+import 'package:complete_flutter_dart_development_course/news_app/widgets/lists/sliver_news_list.dart';
 import 'package:flutter/material.dart';
 
 class NewsHomeView extends StatelessWidget {

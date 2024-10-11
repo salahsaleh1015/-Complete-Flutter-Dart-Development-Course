@@ -1,6 +1,6 @@
 import 'package:complete_flutter_dart_development_course/news_app/models/article_model.dart';
 import 'package:complete_flutter_dart_development_course/news_app/services/news_services.dart';
-import 'package:complete_flutter_dart_development_course/news_app/widgets/news_item.dart';
+import 'package:complete_flutter_dart_development_course/news_app/widgets/items/news_item.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +13,7 @@ class SliverNewsList extends StatefulWidget {
 
 class _SliverNewsListState extends State<SliverNewsList> {
   List<ArticleModel> articles = [];
+  bool isLoaded = false;
 
   @override
   void initState() {
@@ -22,16 +23,22 @@ class _SliverNewsListState extends State<SliverNewsList> {
 
   Future<void> getGeneralNews() async {
     articles = await NewsService(dio: Dio()).getGeneralNews();
+    isLoaded = true;
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
+    return isLoaded ?  SliverList(
       delegate: SliverChildBuilderDelegate(
         (context, index) =>  NewsItem(
           articleModel: articles[index],
         ),
         childCount:articles.length,
+      ),
+    ): const SliverFillRemaining(
+      child: Center(
+        child: CircularProgressIndicator(),
       ),
     );
   }

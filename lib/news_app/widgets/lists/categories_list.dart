@@ -4,7 +4,7 @@
 import 'package:complete_flutter_dart_development_course/news_app/models/category_model.dart';
 import 'package:flutter/material.dart';
 
-import 'category_item.dart';
+import '../items/category_item.dart';
 
 
 class CategoriesList extends StatelessWidget {
