@@ -31,13 +31,19 @@ class _SliverNewsListBuilderState extends State<SliverNewsListBuilder> {
   @override
   Widget build(BuildContext context) {
     return isLoaded
-        ? SliverNewsList(
-      articles: articles,
-    )
+        ? articles.isNotEmpty
+            ? SliverNewsList(
+                articles: articles,
+              )
+            : const SliverFillRemaining(
+                child: Center(
+                  child: Text('oops there is no news'),
+                ),
+              )
         : const SliverFillRemaining(
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
-    );
+            child: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
   }
 }
