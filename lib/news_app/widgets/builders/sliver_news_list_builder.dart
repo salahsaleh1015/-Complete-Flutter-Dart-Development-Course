@@ -6,22 +6,24 @@ import '../../services/news_services.dart';
 import '../lists/sliver_news_list.dart';
 
 class SliverNewsListBuilder extends StatefulWidget {
-  const SliverNewsListBuilder({super.key});
-
+  const SliverNewsListBuilder({super.key, required this.category});
+  final String category;
   @override
   State<SliverNewsListBuilder> createState() => _SliverNewsListBuilderState();
 }
 
 class _SliverNewsListBuilderState extends State<SliverNewsListBuilder> {
-
- var future;
+  var future;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-   future = NewsService(dio: Dio()).getGeneralNews();
+    future = NewsService(dio: Dio()).getGeneralNews(
+      category: widget.category,
+    );
   }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<ArticleModel>>(

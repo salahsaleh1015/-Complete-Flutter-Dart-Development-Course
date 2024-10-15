@@ -12,7 +12,7 @@ class CategoriesList extends StatelessWidget {
 
  final List<CategoryModel> categories = const[
     CategoryModel(name: "business", imageAssetPath: "assets/news_assets/business.avif"),
-   CategoryModel(name: "entertaiment", imageAssetPath: "assets/news_assets/entertaiment.avif"),
+   CategoryModel(name: "entertainment", imageAssetPath: "assets/news_assets/entertaiment.avif"),
    CategoryModel(name: "health", imageAssetPath: "assets/news_assets/health.avif"),
    CategoryModel(name: "science", imageAssetPath: "assets/news_assets/science.avif"),
    CategoryModel(name: "sports", imageAssetPath: "assets/news_assets/sports.avif"),

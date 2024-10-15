@@ -46,7 +46,7 @@ class NewsHomeView extends StatelessWidget {
               ),
             ),
             SliverNewsListBuilder(
-
+              category: 'general',
             ),
           ],
         ),

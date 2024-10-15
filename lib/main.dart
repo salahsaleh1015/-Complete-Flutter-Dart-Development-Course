@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  NewsService(dio: Dio()).getGeneralNews();
+
   runApp(const MyApp());
 }
 
