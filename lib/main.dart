@@ -1,6 +1,5 @@
-import 'package:complete_flutter_dart_development_course/news_app/news_app.dart';
-import 'package:complete_flutter_dart_development_course/news_app/services/news_services.dart';
-import 'package:dio/dio.dart';
+import 'package:complete_flutter_dart_development_course/weather_app/weather_app.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const  MaterialApp(
 
       debugShowCheckedModeBanner: false,
-      home: NewsApp(),
+      home: WeatherApp(),
     );
   }
 }
