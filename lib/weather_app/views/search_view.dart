@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class SearchView extends StatelessWidget {
@@ -23,6 +25,22 @@ class SearchView extends StatelessWidget {
           ),
         ),
       ),
+      body: Center(
+          child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: TextField(
+          onSubmitted: (value) {
+            print(value);
+          },
+          decoration: const InputDecoration(
+              suffixIcon: Icon(Icons.search),
+              contentPadding:
+                  EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+              labelText: 'Search ',
+              hintText: 'Enter city name',
+              border: OutlineInputBorder()),
+        ),
+      )),
     );
   }
 }
