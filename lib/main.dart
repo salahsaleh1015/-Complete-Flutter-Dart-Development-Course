@@ -1,5 +1,4 @@
 import 'package:complete_flutter_dart_development_course/weather_app/weather_app.dart';
-
 import 'package:flutter/material.dart';
 
 void main() {
