@@ -20,3 +20,10 @@ class MyApp extends StatelessWidget {
 }
 
 
+// (BLOC Pattern)
+// create states
+// create cubit
+// create methods
+// provide cubit
+// integrate cubit
+// trigger cubit
