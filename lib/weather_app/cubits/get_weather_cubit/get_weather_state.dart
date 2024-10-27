@@ -6,5 +6,5 @@ class GetWeatherState {}
 final class GetWeatherInitialState extends GetWeatherState {}
 final class GetWeatherLoadedState extends GetWeatherState {}
 final class GetWeatherLoadingState extends GetWeatherState {}
-final class c extends GetWeatherState {}
+final class GetWeatherFailureState extends GetWeatherState {}
 final class GetWeatherNoWeatherState extends GetWeatherState {}
