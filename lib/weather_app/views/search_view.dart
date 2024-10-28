@@ -15,14 +15,12 @@ class SearchView extends StatelessWidget {
             },
             icon: const Icon(
               Icons.arrow_back,
-              color: Colors.white,
+
             )),
-        backgroundColor: const Color(0xff2196f4),
+
         title: const Text(
           'Weather App',
-          style: TextStyle(
-            color: Colors.white,
-          ),
+
         ),
       ),
       body: Center(
