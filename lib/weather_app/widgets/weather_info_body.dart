@@ -8,7 +8,7 @@ class WeatherInfoBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
- WeatherModel weatherModel =  BlocProvider.of<GetWeatherCubit>(context).weather;
+ WeatherModel weatherModel =  BlocProvider.of<GetWeatherCubit>(context).weather!;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
