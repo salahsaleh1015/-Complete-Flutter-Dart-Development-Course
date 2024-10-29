@@ -1,5 +1,6 @@
 import 'package:complete_flutter_dart_development_course/main.dart';
 import 'package:complete_flutter_dart_development_course/weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
+import 'package:complete_flutter_dart_development_course/weather_app/functions/functions.dart';
 import 'package:complete_flutter_dart_development_course/weather_app/models/weather_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,7 +15,7 @@ final WeatherModel weatherModel;
       decoration:BoxDecoration(
         gradient: LinearGradient(
           colors: [
-           getAppThemeColor(weatherModel.weatherCondition),
+            getAppThemeColor(weatherModel.weatherCondition),
             getAppThemeColor(weatherModel.weatherCondition)[300]!,
             getAppThemeColor(weatherModel.weatherCondition)[100]!,
           ],
