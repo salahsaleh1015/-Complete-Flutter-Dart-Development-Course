@@ -5,19 +5,21 @@ import 'package:http/http.dart' as http;
 import 'package:complete_flutter_dart_development_course/store_app/models/product_model.dart';
 
 class GetAllProductServices {
-
   Future<List<ProductModel>> getAllProducts() async {
-    var url = Uri.https('https://fakestoreapi.com/products');
+    http.Response url =
+        await http.get(Uri.parse('https://fakestoreapi.com/products'));
 
-    var response = await http.post(url);
+    if (url.statusCode == 200) {
+      List<dynamic> data = jsonDecode(url.body);
 
-    List<dynamic> data = jsonDecode(response.body);
+      List<ProductModel> products = [];
 
-    List<ProductModel> products = [];
-
-    for (var product in data) {
-      products.add(ProductModel.fromJson(product));
+      for (var product in data) {
+        products.add(ProductModel.fromJson(product));
+      }
+      return products;
+    } else {
+      throw Exception('there was an error in status code ${url.statusCode}');
     }
-    return products;
   }
 }
