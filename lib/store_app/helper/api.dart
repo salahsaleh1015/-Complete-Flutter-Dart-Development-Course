@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-
 // this class provides all the api calls
 
 class Api {
@@ -14,5 +13,19 @@ class Api {
       throw Exception(
           'there was an error in status code ${response.statusCode}');
     }
+  }
+
+  Future<dynamic> post(
+      {required String url, required dynamic body, String? token}) async {
+    Map<String, String> headers = {};
+    if (token != null) {
+      headers.addAll({'Authorization': 'Bearer $token'});
+    }
+    http.Response response =
+        await http.get(Uri.parse('https://fakestoreapi.com/products'));
+
+    Map<String, dynamic> data = jsonDecode(response.body);
+
+    return data;
   }
 }
