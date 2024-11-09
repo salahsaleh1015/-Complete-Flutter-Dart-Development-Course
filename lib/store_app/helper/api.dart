@@ -21,11 +21,17 @@ class Api {
     if (token != null) {
       headers.addAll({'Authorization': 'Bearer $token'});
     }
+
     http.Response response =
-        await http.post(Uri.parse(url),body: body, headers: headers);
+        await http.post(Uri.parse(url), body: body, headers: headers);
 
-    Map<String, dynamic> data = jsonDecode(response.body);
+    if (response.statusCode == 200) {
+      Map<String, dynamic> data = jsonDecode(response.body);
 
-    return data;
+      return data;
+    } else {
+      throw Exception(
+          'there was an error in status code ${response.statusCode} and body ${response.body}');
+    }
   }
 }
