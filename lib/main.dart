@@ -1,32 +1,24 @@
-
-
-
-import 'package:complete_flutter_dart_development_course/store_app/store_app.dart';
+import 'package:complete_flutter_dart_development_course/store_app/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const StoreApp());
 }
 
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class StoreApp extends StatelessWidget {
+  const StoreApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      initialRoute: HomeView.id,
+      routes: {
+        HomeView.id: (context) => const HomeView(),
+      },
       debugShowCheckedModeBanner: false,
-      home: StoreApp(),
     );
   }
 }
-
-
-
-
-
-
-
 
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});
@@ -56,5 +48,3 @@ class MyApp extends StatelessWidget {
 //         ));
 //   }
 // }
-
-
