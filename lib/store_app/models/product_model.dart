@@ -2,7 +2,7 @@ class ProductModel {
   final int id;
   final String title;
   final String description;
-  final double price;
+  final dynamic price;
   final String image;
   final String category;
   final RatingModel rating;
@@ -32,8 +32,8 @@ class ProductModel {
 }
 
 class RatingModel {
-  final double rate;
-  final double count;
+  final dynamic rate;
+  final int count;
 
   RatingModel({required this.rate, required this.count});
 
