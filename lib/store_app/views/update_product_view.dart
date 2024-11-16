@@ -1,3 +1,5 @@
+import 'package:complete_flutter_dart_development_course/store_app/models/product_model.dart';
+import 'package:complete_flutter_dart_development_course/store_app/services/update_product_services.dart';
 import 'package:complete_flutter_dart_development_course/store_app/widgets/custom_button.dart';
 import 'package:complete_flutter_dart_development_course/store_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +8,11 @@ class UpdateProductView extends StatelessWidget {
   UpdateProductView({super.key});
   static String id = "update product";
   String? productName, description, image;
-  int? price;
+  String? price;
   @override
   Widget build(BuildContext context) {
+    ProductModel productModel =
+        ModalRoute.of(context)!.settings.arguments as ProductModel;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -45,7 +49,7 @@ class UpdateProductView extends StatelessWidget {
               CustomTextField(
                 hintText: "Price",
                 onChanged: (val) {
-                  price = int.parse(val);
+                  price = val;
                 },
               ),
               const SizedBox(
@@ -60,7 +64,16 @@ class UpdateProductView extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              CustomButton(text: "Update", onTap: () {})
+              CustomButton(
+                  text: "Update",
+                  onTap: () {
+                    UpdateProductServices().updateProductService(
+                        title: productName!,
+                        price: price!,
+                        description: description!,
+                        category: productModel.category,
+                        image: image!);
+                  })
             ],
           ),
         ),
