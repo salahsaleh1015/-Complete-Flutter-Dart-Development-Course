@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class UpdateProductView extends StatefulWidget {
-  UpdateProductView({super.key});
+  const UpdateProductView({super.key});
   static String id = "update product";
 
   @override
@@ -79,11 +79,12 @@ class _UpdateProductViewState extends State<UpdateProductView> {
                 ),
                 CustomButton(
                     text: "Update",
-                    onTap: () {
+                    onTap: () async {
                       isLoading = true;
                       setState(() {});
                       try{
-                        updateProduct(product);
+                      await  updateProduct(product);
+                        print("success");
                       }catch (e){
                         print(e.toString());
                       }
@@ -98,12 +99,13 @@ class _UpdateProductViewState extends State<UpdateProductView> {
     );
   }
 
-  void updateProduct(ProductModel product) {
-    UpdateProductServices().updateProductService(
-        title: productName!,
-        price: price!,
-        description: description!,
+  Future<void> updateProduct(ProductModel product) async{
+   await UpdateProductServices().updateProductService(
+     id: product.id,
+        title: productName == null ? product.title: productName!,
+        price:price == null ? product.price.toString(): price!,
+        description: description == null ? product.description: description!,
         category: product.category,
-        image: image!);
+        image: image == null ? product.image: image!,);
   }
 }

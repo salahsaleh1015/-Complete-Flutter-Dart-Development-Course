@@ -55,12 +55,14 @@ class Api {
       headers.addAll({'Authorization': 'Bearer $token'});
     }
 
+    print("body is $body and url is $url and token are $token");
     http.Response response =
     await http.put(Uri.parse(url), body: body, headers: headers);
 
     if (response.statusCode == 200) {
       Map<String, dynamic> data = jsonDecode(response.body);
 
+      print(data);
       return data;
     } else {
       throw Exception(
