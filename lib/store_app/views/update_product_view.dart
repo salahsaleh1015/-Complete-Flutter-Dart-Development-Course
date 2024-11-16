@@ -3,41 +3,68 @@ import 'package:complete_flutter_dart_development_course/store_app/widgets/custo
 import 'package:flutter/material.dart';
 
 class UpdateProductView extends StatelessWidget {
-  const UpdateProductView({super.key});
-static String id = "update product";
+  UpdateProductView({super.key});
+  static String id = "update product";
+  String? productName, description, image;
+  int? price;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle:  true,
+        centerTitle: true,
         title: const Text("Update Product"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CustomTextField(hintText: "Product Name",onChanged: (val){},),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomTextField(hintText: "Description",onChanged: (val){},),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomTextField(hintText: "Price",onChanged: (val){},),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomTextField(hintText: "image",onChanged: (val){},),
-            const SizedBox(
-              height: 50,
-            ),
-           CustomButton(text:"Update", onTap:(){})
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 100,
+              ),
+              CustomTextField(
+                hintText: "Product Name",
+                onChanged: (val) {
+                  productName = val;
+                },
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              CustomTextField(
+                keyboardType: TextInputType.number,
+                hintText: "Description",
+                onChanged: (val) {
+                  description = val;
+                },
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              CustomTextField(
+                hintText: "Price",
+                onChanged: (val) {
+                  price = int.parse(val);
+                },
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              CustomTextField(
+                hintText: "image",
+                onChanged: (val) {
+                  image = val;
+                },
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              CustomButton(text: "Update", onTap: () {})
+            ],
+          ),
         ),
       ),
     );
-
   }
 }
