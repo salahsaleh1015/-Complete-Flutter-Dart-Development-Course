@@ -15,8 +15,12 @@ class NotesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
+
       home: const NotesView(),
       theme: ThemeData.dark(),
+      darkTheme: ThemeData(
+        fontFamily: "Pacifico"
+      ),
     );
   }
 }
