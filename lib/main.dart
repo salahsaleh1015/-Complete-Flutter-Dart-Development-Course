@@ -7,47 +7,19 @@ void main() {
   runApp(const NotesApp());
 }
 
-
-
 class NotesApp extends StatelessWidget {
   const NotesApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: const NotesView(),
       theme: ThemeData.dark(),
-      darkTheme: ThemeData(
-        fontFamily: "Pacifico"
-      ),
+      darkTheme: ThemeData(fontFamily: "Pacifico"),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // class StoreApp extends StatelessWidget {
 //   const StoreApp({super.key});

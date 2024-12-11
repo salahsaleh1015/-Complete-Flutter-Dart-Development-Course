@@ -1,4 +1,5 @@
 import 'package:complete_flutter_dart_development_course/notes_app/constants.dart';
+import 'package:complete_flutter_dart_development_course/notes_app/widgets/custom_bottom.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -41,22 +42,3 @@ class AddModalBottomSheet extends StatelessWidget {
   }
 }
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return  Container(
-      width: MediaQuery.of(context).size.width,
-      height: 60,
-      decoration: BoxDecoration(
-        color: kPrimaryColor,
-        borderRadius: BorderRadius.circular(8),
-
-      ),
-      child: Center(
-        child: Text("Add",style: TextStyle(color: Colors.black,fontSize: 20),),
-      ),
-    );
-  }
-}
