@@ -21,6 +21,7 @@ class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
 
   String? title, content;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -50,21 +51,26 @@ class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
           const SizedBox(
             height: 25,
           ),
-          CustomButton(
-            onTap: () {
-              if (formKey.currentState!.validate()) {
-                formKey.currentState!.save();
-                var note = NoteModel(
-                    title: title!,
-                    subtitle: content!,
-                    color: Colors.blue.value,
-                    date: DateTime.now().toString());
+          BlocBuilder<AddNoteCubit, AddNoteState>(
+            builder: (context, state) {
+              return CustomButton(
+                isLoading: state is AddNoteLoading ? true : false,
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    var note = NoteModel(
+                        title: title!,
+                        subtitle: content!,
+                        color: Colors.blue.value,
+                        date: DateTime.now().toString());
 
-                BlocProvider.of<AddNoteCubit>(context).addNote(note);
-              } else {
-                autoValidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
+                    BlocProvider.of<AddNoteCubit>(context).addNote(note);
+                  } else {
+                    autoValidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+              );
             },
           ),
           const SizedBox(
