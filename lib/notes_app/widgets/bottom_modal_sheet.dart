@@ -13,32 +13,75 @@ class AddModalBottomSheet extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 50,
-                ),
-                CustomTextField(
-                  hintText: "title",
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                CustomTextField(
-                  hintText: "content",
-                  maxLines: 5,
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                CustomButton(),
-                SizedBox(
-                  height: 25,
-                ),
-              ],
-            ),
+            child: AddModalBottomSheetForm(),
           ),
         ));
+  }
+}
+
+class AddModalBottomSheetForm extends StatefulWidget {
+  const AddModalBottomSheetForm({
+    super.key,
+  });
+
+  @override
+  State<AddModalBottomSheetForm> createState() => _AddModalBottomSheetFormState();
+}
+
+class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
+
+  final GlobalKey<FormState> formKey = GlobalKey();
+
+  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
+
+  String? title, content;
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      autovalidateMode: autoValidateMode,
+      key: formKey,
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 50,
+          ),
+          CustomTextField(
+             onSaved: (val){
+               title = val;
+             },
+            hintText: "title",
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          CustomTextField(
+            onSaved: (val){
+              content = val;
+            },
+            hintText: "content",
+            maxLines: 5,
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          CustomButton(
+            onTap: (){
+              if(formKey.currentState!.validate()){
+                formKey.currentState!.save();
+              }else{
+                autoValidateMode = AutovalidateMode.always;
+                setState(() {
+
+                });
+              }
+            },
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+        ],
+      ),
+    );
   }
 }
 
