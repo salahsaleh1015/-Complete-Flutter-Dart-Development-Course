@@ -1,11 +1,9 @@
-
-
-
-
-
+import 'package:complete_flutter_dart_development_course/notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:complete_flutter_dart_development_course/notes_app/models/note_model.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/widgets/custom_bottom.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddModalBottomSheetForm extends StatefulWidget {
   const AddModalBottomSheetForm({
@@ -13,11 +11,11 @@ class AddModalBottomSheetForm extends StatefulWidget {
   });
 
   @override
-  State<AddModalBottomSheetForm> createState() => _AddModalBottomSheetFormState();
+  State<AddModalBottomSheetForm> createState() =>
+      _AddModalBottomSheetFormState();
 }
 
 class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
-
   final GlobalKey<FormState> formKey = GlobalKey();
 
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
@@ -34,7 +32,7 @@ class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
             height: 50,
           ),
           CustomTextField(
-            onSaved: (val){
+            onSaved: (val) {
               title = val;
             },
             hintText: "title",
@@ -43,7 +41,7 @@ class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
             height: 15,
           ),
           CustomTextField(
-            onSaved: (val){
+            onSaved: (val) {
               content = val;
             },
             hintText: "content",
@@ -53,14 +51,19 @@ class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
             height: 25,
           ),
           CustomButton(
-            onTap: (){
-              if(formKey.currentState!.validate()){
+            onTap: () {
+              if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
-              }else{
-                autoValidateMode = AutovalidateMode.always;
-                setState(() {
+                var note = NoteModel(
+                    title: title!,
+                    subtitle: content!,
+                    color: Colors.blue.value,
+                    date: DateTime.now().toString());
 
-                });
+                BlocProvider.of<AddNoteCubit>(context).addNote(note);
+              } else {
+                autoValidateMode = AutovalidateMode.always;
+                setState(() {});
               }
             },
           ),
@@ -72,4 +75,3 @@ class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
     );
   }
 }
-
