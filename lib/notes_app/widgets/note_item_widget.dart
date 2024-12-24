@@ -28,7 +28,7 @@ class CustomNoteItem extends StatelessWidget {
             ListTile(
               title:  Text(
                note.title,
-                style: TextStyle(
+                style: const TextStyle(
                     fontFamily: "Pacifico", fontSize: 26, color: Colors.black),
               ),
               subtitle: Padding(
@@ -44,7 +44,9 @@ class CustomNoteItem extends StatelessWidget {
               trailing: Padding(
                 padding: const EdgeInsets.only(bottom: 24),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    note.delete();
+                  },
                   icon: const Icon(
                     FontAwesomeIcons.trash,
                     color: Colors.black,
