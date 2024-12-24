@@ -4,6 +4,7 @@ import 'package:complete_flutter_dart_development_course/notes_app/widgets/custo
 import 'package:complete_flutter_dart_development_course/notes_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 class AddModalBottomSheetForm extends StatefulWidget {
   const AddModalBottomSheetForm({
@@ -56,13 +57,19 @@ class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
               return CustomButton(
                 isLoading: state is AddNoteLoading ? true : false,
                 onTap: () {
+
+                  var currentTime = DateTime.now();
+
+                  var  formattedTime = DateFormat('hh:mm a').format(currentTime);
+
+
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
                     var note = NoteModel(
                         title: title!,
                         subtitle: content!,
                         color: Colors.blue.value,
-                        date: DateTime.now().toString());
+                        date:formattedTime);
 
                     BlocProvider.of<AddNoteCubit>(context).addNote(note);
                   } else {
