@@ -16,21 +16,18 @@ class _NotesViewState extends State<NotesView> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => GetNotesCubit()..getAllNotes(),
-      child: Scaffold(
+    return Scaffold(
+      backgroundColor: const Color(0xff2d2d2d),
+      body: const NotesViewBody(),
+      floatingActionButton: FloatingActionButton(
         backgroundColor: const Color(0xff2d2d2d),
-        body: const NotesViewBody(),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: const Color(0xff2d2d2d),
-          onPressed: () {
-            showModalBottomSheet(
-                isScrollControlled: true,
-                context: context,
-                builder: (context) => const AddModalBottomSheet());
-          },
-          child: const Icon(Icons.add),
-        ),
+        onPressed: () {
+          showModalBottomSheet(
+              isScrollControlled: true,
+              context: context,
+              builder: (context) => const AddModalBottomSheet());
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }

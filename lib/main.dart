@@ -1,5 +1,6 @@
 import 'package:complete_flutter_dart_development_course/notes_app/constants.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:complete_flutter_dart_development_course/notes_app/cubits/get_notes_cubit/get_notes_cubit.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/models/note_model.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/simple_bloc_observer.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/views/notes_view.dart';
@@ -9,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 
-void main() async{
+void main() async {
   Bloc.observer = SimpleBlocObserver();
   await Hive.initFlutter();
   Hive.registerAdapter(NoteModelAdapter());
@@ -23,11 +24,14 @@ class NotesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const NotesView(),
-      theme: ThemeData.dark(),
-      darkTheme: ThemeData(fontFamily: "Pacifico"),
+    return BlocProvider(
+      create: (context) => GetNotesCubit()..getAllNotes(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: const NotesView(),
+        theme: ThemeData.dark(),
+        darkTheme: ThemeData(fontFamily: "Pacifico"),
+      ),
     );
   }
 }

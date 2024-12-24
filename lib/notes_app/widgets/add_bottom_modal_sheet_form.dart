@@ -1,4 +1,5 @@
 import 'package:complete_flutter_dart_development_course/notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:complete_flutter_dart_development_course/notes_app/cubits/get_notes_cubit/get_notes_cubit.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/models/note_model.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/widgets/custom_bottom.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/widgets/custom_text_field.dart';
@@ -72,6 +73,7 @@ class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
                         date:formattedTime);
 
                     BlocProvider.of<AddNoteCubit>(context).addNote(note);
+                    BlocProvider.of<GetNotesCubit>(context).getAllNotes();
                   } else {
                     autoValidateMode = AutovalidateMode.always;
                     setState(() {});
