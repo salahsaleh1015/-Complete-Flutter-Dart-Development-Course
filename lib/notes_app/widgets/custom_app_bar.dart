@@ -2,9 +2,10 @@ import 'package:complete_flutter_dart_development_course/notes_app/widgets/custo
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.title, required this.icon});
+  const CustomAppBar({super.key, required this.title, required this.icon, required this.onTap});
   final String title;
   final IconData icon;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -15,6 +16,7 @@ class CustomAppBar extends StatelessWidget {
         ),
         const Spacer(),
         CustomSearchIcon(
+          onTap: onTap,
           icon: icon,
         ),
       ],
