@@ -1,6 +1,7 @@
 import 'package:complete_flutter_dart_development_course/notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/cubits/get_notes_cubit/get_notes_cubit.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/models/note_model.dart';
+import 'package:complete_flutter_dart_development_course/notes_app/widgets/colors_list_view.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/widgets/custom_bottom.dart';
 import 'package:complete_flutter_dart_development_course/notes_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -51,37 +52,17 @@ class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
             maxLines: 5,
           ),
           const SizedBox(
-            height: 25,
+            height: 15,
           ),
-          BlocBuilder<AddNoteCubit, AddNoteState>(
-            builder: (context, state) {
-              return CustomButton(
-                isLoading: state is AddNoteLoading ? true : false,
-                onTap: () {
-
-                  var currentTime = DateTime.now();
-
-                  var  formattedTime = DateFormat('hh:mm a').format(currentTime);
-
-
-                  if (formKey.currentState!.validate()) {
-                    formKey.currentState!.save();
-                    var note = NoteModel(
-                        title: title!,
-                        subtitle: content!,
-                        color: Colors.blue.value,
-                        date:formattedTime);
-
-                    BlocProvider.of<AddNoteCubit>(context).addNote(note);
-                    BlocProvider.of<GetNotesCubit>(context).getAllNotes();
-                  } else {
-                    autoValidateMode = AutovalidateMode.always;
-                    setState(() {});
-                  }
-                },
-              );
-            },
+          const ColorListView(),
+          const SizedBox(
+            height: 15,
           ),
+          const SizedBox(
+            height: 15,
+          ),
+          buildAddNoteBottomSheet(),
+
           const SizedBox(
             height: 25,
           ),
@@ -89,4 +70,38 @@ class _AddModalBottomSheetFormState extends State<AddModalBottomSheetForm> {
       ),
     );
   }
+ Widget buildAddNoteBottomSheet() {
+    return  BlocBuilder<AddNoteCubit, AddNoteState>(
+      builder: (context, state) {
+        return CustomButton(
+          isLoading: state is AddNoteLoading ? true : false,
+          onTap: () {
+
+            var currentTime = DateTime.now();
+
+            var  formattedTime = DateFormat('hh:mm a').format(currentTime);
+
+
+            if (formKey.currentState!.validate()) {
+              formKey.currentState!.save();
+              var note = NoteModel(
+                  title: title!,
+                  subtitle: content!,
+                  color: Colors.blue.value,
+                  date:formattedTime);
+
+              BlocProvider.of<AddNoteCubit>(context).addNote(note);
+              BlocProvider.of<GetNotesCubit>(context).getAllNotes();
+            } else {
+              autoValidateMode = AutovalidateMode.always;
+              setState(() {});
+            }
+          },
+        );
+      },
+    );
+  }
 }
+
+
+
