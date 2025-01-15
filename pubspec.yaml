@@ -82,6 +82,7 @@ flutter:
     - assets/sounds/notes/
     - assets/news_assets/
     - assets/weather_images/
+    - assets/images/scholar.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
