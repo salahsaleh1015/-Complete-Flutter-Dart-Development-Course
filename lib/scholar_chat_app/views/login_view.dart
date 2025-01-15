@@ -1,24 +1,25 @@
 import 'package:complete_flutter_dart_development_course/scholar_chat_app/views/register_view.dart';
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
-
+ static String id = "LoginView";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff314f6a),
+      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 8,
         ),
         child: Column(
           children: [
-            const Spacer(
-              flex: 1,
+            const SizedBox(
+              height: 200,
             ),
             Image.asset("assets/images/scholar.png"),
             const Text(
@@ -59,7 +60,9 @@ class LoginView extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            CustomButton(text: "Login", onTap: () {}),
+            CustomButton(text: "Login", onTap: () {
+              //Navigator.pushNamed(context, RegisterView.id);
+            }),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -69,10 +72,7 @@ class LoginView extends StatelessWidget {
                 ),
                 TextButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const RegisterView()));
+                      Navigator.pushNamed(context, RegisterView.id);
                     },
                     child: const Text(
                       "Register",
@@ -80,9 +80,7 @@ class LoginView extends StatelessWidget {
                     ))
               ],
             ),
-            const Spacer(
-              flex: 2,
-            ),
+
           ],
         ),
       ),
