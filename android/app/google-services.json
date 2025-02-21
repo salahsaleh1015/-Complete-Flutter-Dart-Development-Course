@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "502081899828",
+    "project_id": "flutter-development-cour-9e0f3",
+    "storage_bucket": "flutter-development-cour-9e0f3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502081899828:android:1a24a1904cbd484f58e961",
+        "android_client_info": {
+          "package_name": "com.example.complete_flutter_dart_development_course"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGszeLZkYyQbUvcQFTtymawGI9pemoX8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

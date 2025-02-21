@@ -48,13 +48,13 @@ class LoginView extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const CustomTextField(
+             CustomTextField(
               hint: "Enter Your Email",
             ),
             const SizedBox(
               height: 10,
             ),
-            const CustomTextField(
+             CustomTextField(
               hint: "Enter Your Password",
             ),
             const SizedBox(
