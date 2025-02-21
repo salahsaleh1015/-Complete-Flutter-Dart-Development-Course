@@ -1,4 +1,5 @@
 import 'package:complete_flutter_dart_development_course/scholar_chat_app/views/login_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -6,10 +7,13 @@ import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
 class RegisterView extends StatelessWidget {
-  const RegisterView({super.key});
+   RegisterView({super.key});
 
   static String id = "RegisterView";
-  @override
+
+  String ? email;
+  String ? password;
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
@@ -50,19 +54,35 @@ class RegisterView extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const CustomTextField(
+               CustomTextField(
                 hint: "Enter Your Email",
+                 onChanged: (data){
+                   email = data;
+                 },
               ),
               const SizedBox(
                 height: 10,
               ),
-              const CustomTextField(
+               CustomTextField(
                 hint: "Enter Your Password",
+                 onChanged: (data){
+                   password = data;
+                 },
               ),
               const SizedBox(
                 height: 20,
               ),
-              CustomButton(text: "Register", onTap: () {}),
+              CustomButton(
+                  text: "Register",
+                  onTap: () async {
+                    var auth = FirebaseAuth.instance;
+
+                    UserCredential userCredential =
+                        await auth.createUserWithEmailAndPassword(
+                            email: email!, password: password!);
+
+                    print(userCredential.user!.email);
+                  }),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
