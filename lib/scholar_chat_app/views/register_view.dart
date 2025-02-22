@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../constants.dart';
+import '../helper/show_snack_bar.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
@@ -139,10 +140,7 @@ class _RegisterViewState extends State<RegisterView> {
     );
   }
 
-  void showSnackBar(BuildContext context, String message) {
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text(message)));
-  }
+
 
   Future<void> registerUser() async {
     await FirebaseAuth.instance
