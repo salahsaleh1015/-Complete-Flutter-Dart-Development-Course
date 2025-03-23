@@ -1,3 +1,4 @@
+import 'package:complete_flutter_dart_development_course/scholar_chat_app/views/chat_view.dart';
 import 'package:complete_flutter_dart_development_course/scholar_chat_app/views/register_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -93,8 +94,8 @@ class _LoginViewState extends State<LoginView> {
                     setState(() {});
                     try {
                       await loginUser();
+         Navigator.pushNamed(context, ChatView.id);
 
-                      showSnackBar(context, 'success');
                     } on FirebaseAuthException catch (ex) {
                       if (ex.code == 'user-not-found') {
                         showSnackBar(context, 'user-not-found');

@@ -1,3 +1,4 @@
+import 'package:complete_flutter_dart_development_course/scholar_chat_app/views/chat_view.dart';
 import 'package:complete_flutter_dart_development_course/scholar_chat_app/views/login_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -97,7 +98,7 @@ class _RegisterViewState extends State<RegisterView> {
                           try {
                             await registerUser();
 
-                            showSnackBar(context, 'success');
+                            Navigator.pushNamed(context, ChatView.id);
                           } on FirebaseAuthException catch (ex) {
                             if (ex.code == 'weak-password') {
                               showSnackBar(context, 'weak password');
