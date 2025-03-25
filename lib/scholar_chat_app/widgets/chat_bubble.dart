@@ -5,13 +5,15 @@
 
 import 'package:flutter/material.dart';
 
-import '../../notes_app/constants.dart';
+import '../constants.dart';
+
+
 
 class ChatBubble extends StatelessWidget {
   const ChatBubble({
-    super.key,
+    super.key, required this.message,
   });
-
+final String message;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,6 +27,6 @@ class ChatBubble extends StatelessWidget {
           )
       ),
       padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
-      child: const Text("Hello World ",style: TextStyle(color: Colors.white),),);
+      child:  Text(message,style: const TextStyle(color: Colors.white),),);
   }
 }
