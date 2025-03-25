@@ -12,10 +12,13 @@ class ChatView extends StatelessWidget {
   CollectionReference message =
       FirebaseFirestore.instance.collection('messages');
   TextEditingController messageController = TextEditingController();
+
+
+  final ScrollController scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-        stream: message.orderBy('time').snapshots(),
+        stream: message.orderBy('time',descending: true).snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<MessageModel> messagesList = [];
@@ -36,6 +39,8 @@ class ChatView extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ListView.builder(
+                      reverse: true,
+                      controller: scrollController,
                       itemCount: messagesList.length,
                       itemBuilder: (context, index) =>  Align(
                         alignment: Alignment.topLeft,
@@ -52,6 +57,10 @@ class ChatView extends StatelessWidget {
                       onSubmitted: (data) {
                         message.add({'message': data,'time':DateTime.now()});
                         messageController.clear();
+
+                        scrollController.animateTo(scrollController.position.maxScrollExtent,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.fastOutSlowIn);
                       },
                       decoration: InputDecoration(
                         hintText: 'Enter your message here..',
