@@ -14,8 +14,8 @@ class ChatView extends StatelessWidget {
   TextEditingController messageController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<QuerySnapshot>(
-        future: message.get(),
+    return StreamBuilder<QuerySnapshot>(
+        stream: message.orderBy('time').snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<MessageModel> messagesList = [];
@@ -50,10 +50,11 @@ class ChatView extends StatelessWidget {
                     child: TextField(
                       controller: messageController,
                       onSubmitted: (data) {
-                        message.add({'message': data});
+                        message.add({'message': data,'time':DateTime.now()});
                         messageController.clear();
                       },
                       decoration: InputDecoration(
+                        hintText: 'Enter your message here..',
                           suffixIcon: const Icon(
                             Icons.send,
                             color: kPrimaryColor,
