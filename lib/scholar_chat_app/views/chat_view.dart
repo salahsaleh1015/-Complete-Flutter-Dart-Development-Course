@@ -13,12 +13,12 @@ class ChatView extends StatelessWidget {
       FirebaseFirestore.instance.collection('messages');
   TextEditingController messageController = TextEditingController();
 
-
   final ScrollController scrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
+    var email = ModalRoute.of(context)!.settings.arguments;
     return StreamBuilder<QuerySnapshot>(
-        stream: message.orderBy('time',descending: true).snapshots(),
+        stream: message.orderBy('time', descending: true).snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<MessageModel> messagesList = [];
@@ -42,12 +42,13 @@ class ChatView extends StatelessWidget {
                       reverse: true,
                       controller: scrollController,
                       itemCount: messagesList.length,
-                      itemBuilder: (context, index) =>  Align(
-                        alignment: Alignment.topLeft,
-                        child: ChatBubble(
-                          message: messagesList[index].message,
-                        ),
-                      ),
+                      itemBuilder: (context, index) => messagesList[index].id != email
+                          ? ChatBubbleForFriend(
+                              message: messagesList[index].message,
+                            )
+                          : ChatBubble(
+                              message: messagesList[index].message,
+                            ),
                     ),
                   ),
                   Padding(
@@ -55,15 +56,20 @@ class ChatView extends StatelessWidget {
                     child: TextField(
                       controller: messageController,
                       onSubmitted: (data) {
-                        message.add({'message': data,'time':DateTime.now()});
+                        message.add({
+                          'message': data,
+                          'time': DateTime.now(),
+                          'id': email
+                        });
                         messageController.clear();
 
-                        scrollController.animateTo(scrollController.position.maxScrollExtent,
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.fastOutSlowIn);
+                        scrollController.animateTo(
+                            scrollController.position.maxScrollExtent,
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.fastOutSlowIn);
                       },
                       decoration: InputDecoration(
-                        hintText: 'Enter your message here..',
+                          hintText: 'Enter your message here..',
                           suffixIcon: const Icon(
                             Icons.send,
                             color: kPrimaryColor,
